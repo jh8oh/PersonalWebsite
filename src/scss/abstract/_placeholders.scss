@@ -16,8 +16,21 @@
   margin: 0;
 }
 
+// General margin for standard page content
+%page-content-default-margin {
+  margin: 80px 24vw 40px;
+
+  @include breakpoint-tablet {
+    margin: 40px 14vw 20px;
+  }
+
+  @include breakpoint-phone {
+    margin: 40px 4vw 20px;
+  }
+}
+
 // Anchor with no underline on hover
-a%no-underline{
+a%no-underline {
   background: none;
 }
 

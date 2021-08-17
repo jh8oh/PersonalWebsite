@@ -1,0 +1,9 @@
+// ---------------------------------------------------------------------------
+// This file contains styles that are specific to the "Portfolio" page.
+// ---------------------------------------------------------------------------
+
+#portfolio {
+  &-content {
+    @extend %page-content-default-margin;
+  }
+}

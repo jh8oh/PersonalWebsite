@@ -1,6 +1,8 @@
 <template>
   <div id="portfolio" class="page">
-    <div id="portfolio-content" class="page-content"></div>
+    <div id="portfolio-content" class="page-content">
+      <h1>Portfolio</h1>
+    </div>
     <Footer />
   </div>
 </template>
