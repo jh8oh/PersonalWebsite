@@ -62,6 +62,10 @@
     #timeline {
       @include navigation-bar(840px);
       min-height: 350px;
+
+      @include breakpoint($breakpoint){
+        min-height: 0px;
+      }
     }
 
     #details {

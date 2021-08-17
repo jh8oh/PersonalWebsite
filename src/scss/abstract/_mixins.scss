@@ -64,8 +64,9 @@
   }
 
   border-color: $color;
-  box-shadow: 0 0 $size $color, 0 0 $size * 2 $color-dark, 0 0 $size / 2 $color, inset 0 0 $size $color,
-    inset 0 0 $size * 2 $color-dark, inset 0 0 $size / 2 $color;
+  box-shadow: 0 0 $size $color, 0 0 $size * 2 $color-dark, 0 0 $size / 2 $color,
+    inset 0 0 $size $color, inset 0 0 $size * 2 $color-dark,
+    inset 0 0 $size / 2 $color;
 }
 
 // Standard navigation bar (vertical until breakpoint is reached)
@@ -78,8 +79,6 @@
   @include breakpoint($breakpoint) {
     position: relative;
     min-width: 0;
-    overflow: auto;
-    white-space: nowrap;
     border-left: 0;
     padding: 4px !important;
 
@@ -91,6 +90,27 @@
       width: 99%;
       z-index: -1;
       background: $color-on-background-variant;
+    }
+  }
+
+  .navigation-bar {
+    &-scroll-wrapper {
+      @extend %no-whitespace;
+
+      @include breakpoint($breakpoint) {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        margin-bottom: -2px;
+      }
+    }
+
+    &-content {
+      @extend %no-whitespace;
+
+      @include breakpoint($breakpoint) {
+        white-space: nowrap;
+      }
     }
   }
 
