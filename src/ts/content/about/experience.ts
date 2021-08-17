@@ -24,7 +24,7 @@ const theScore = new Experience(
   "Android Developer",
   "https://www.thescore.com/",
   "May - Aug. 2021",
-  "Part of theScore Media app for Android team. <br /><ul><li>Worked on migrating the application from Kotlin Synthetics to View Binding along with fixing bugs and mitigating tech debt</li><li>Discovered a new architecture that used the MVVM design pattern, which recycled the same fragment for different screen and populated them with unique ViewHolders using Adapters</li><li>Researched the  methods of obtaining views past Kotlin Synthetics and how they might integrate into the unique architecture of the application</li></ul>"
+  "Part of theScore Media app for Android team. <br /><ul><li>Worked on migrating the application from Kotlin Synthetics to View Binding along with fixing bugs and mitigating tech debt</li><li>Discovered a new architecture that used the MVVM design pattern, which recycled the same fragment for different screen and populated them with unique <code>ViewHolders</code> using <code>Adapters</code></li><li>Researched the  methods of obtaining views past Kotlin Synthetics and how they might integrate into the unique architecture of the application</li></ul>"
 )
 
 const experiences = [theScore, innovapost, dcCanada];
