@@ -61,6 +61,7 @@
 
     #timeline {
       @include navigation-bar(840px);
+      min-height: 350px;
     }
 
     #details {
