@@ -6,4 +6,84 @@
   &-content {
     @extend %page-content-default-margin;
   }
+
+  #archive {
+    &-projects {
+      @extend %no-decoration;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+
+      > li {
+        position: relative;
+        flex-basis: 32%;
+        margin-bottom: 8px;
+        border-radius: 2px;
+        box-shadow: 2px 2px 4px 0 $color-on-background-variant;
+       
+        &:hover{
+
+          @include transition(box-shadow 0.2s ease-in-out);
+        }
+
+        $breakpoint-two-items: 1450px;
+        $breakpoint-one-item: 800px;
+
+        @include breakpoint($breakpoint-two-items){
+          flex-basis: 48%;
+        }
+
+        @include breakpoint($breakpoint-one-item){
+          flex-basis: 96%;
+        }
+      }
+    }
+
+    .archived-project-card {
+      padding: 28px;
+
+      &-heading {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+      }
+
+      &-links {
+        @extend %no-decoration;
+        display: inline-block;
+
+        a{
+          @extend %no-underline;
+        }
+
+        img {
+          @include size(28px);
+        }
+      }
+
+      p{
+        margin: 12px 0;
+      }
+
+      &-tags {
+        @extend %no-decoration;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+
+        li {
+          color: $color-secondary-dark;
+          margin-right: 4px;
+
+          code{
+            font-size: 12px;
+          }
+
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
 }

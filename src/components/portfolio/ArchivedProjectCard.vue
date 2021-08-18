@@ -1,20 +1,22 @@
 <template>
   <div class="archived-project-card">
-    <h4>{{ project.title }}</h4>
-    <ul>
-      <li v-for="link in project.links" :key="link.title">
-        <a :href="link.to">
-          <img
-            @mouseover="link.hoverIcon.setIcon(true)"
-            @mouseleave="link.hoverIcon.setIcon(false)"
-            :src="link.hoverIcon.icon"
-          />
-        </a>
-      </li>
-    </ul>
+    <div class="archived-project-card-heading">
+      <h4>{{ project.title }}</h4>
+      <ul class="archived-project-card-links">
+        <li v-for="link in project.links" :key="link.title">
+          <a :href="link.to">
+            <img
+              @mouseover="link.hoverIcon.setIcon(true)"
+              @mouseleave="link.hoverIcon.setIcon(false)"
+              :src="link.hoverIcon.icon"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
     <p v-html="project.description" />
-    <ul>
-      <li v-for="tag in project.tags" :key="tag">{{ tag }}</li>
+    <ul class="archived-project-card-tags">
+      <li v-for="tag in project.tags" :key="tag"><code>{{ tag }}</code></li>
     </ul>
   </div>
 </template>
