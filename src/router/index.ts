@@ -23,12 +23,21 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
-  scrollBehavior() {
+  scrollBehavior(to, from, savedPosition) {
+    let position = { x: 0, y: 0 }
+    
+    // Keep scroll position when using browser buttons
+    if (savedPosition) {
+      position = savedPosition
+    }
+
+    // Workaround for transitions scrolling to the top of the page
+    // However, there are still some problems being fixed by the vue team
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve({ x: 0, y: 0 })
+        resolve(position)
       }, 400)
-    });
+    })
   },
 });
 
