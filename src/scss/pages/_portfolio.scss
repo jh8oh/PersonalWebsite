@@ -20,20 +20,16 @@
         margin-bottom: 8px;
         border-radius: 2px;
         box-shadow: 2px 2px 4px 0 $color-on-background-variant;
-       
-        &:hover{
-
-          @include transition(box-shadow 0.2s ease-in-out);
-        }
+        @include border-loop($color-primary);
 
         $breakpoint-two-items: 1450px;
         $breakpoint-one-item: 800px;
 
-        @include breakpoint($breakpoint-two-items){
+        @include breakpoint($breakpoint-two-items) {
           flex-basis: 48%;
         }
 
-        @include breakpoint($breakpoint-one-item){
+        @include breakpoint($breakpoint-one-item) {
           flex-basis: 96%;
         }
       }
@@ -52,7 +48,7 @@
         @extend %no-decoration;
         display: inline-block;
 
-        a{
+        a {
           @extend %no-underline;
         }
 
@@ -61,7 +57,7 @@
         }
       }
 
-      p{
+      p {
         margin: 12px 0;
       }
 
@@ -75,11 +71,11 @@
           color: $color-secondary-dark;
           margin-right: 4px;
 
-          code{
+          code {
             font-size: 12px;
           }
 
-          &:last-child{
+          &:last-child {
             margin-right: 0;
           }
         }
