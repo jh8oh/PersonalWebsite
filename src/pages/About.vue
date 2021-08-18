@@ -52,7 +52,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import ExperienceCard from "@/components/about/ExperienceCard.vue";
 import Footer from "@/layouts/Footer.vue";
-import experiences from "@/ts/content/about/experience";
+import experiences from "@/ts/content/pages/about/experience";
 
 @Component({
   components: { ExperienceCard, Footer },

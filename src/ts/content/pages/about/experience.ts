@@ -1,4 +1,4 @@
-import Experience from "../../class/about/Experience";
+import Experience from "../../../class/pages/about/Experience";
 
 const dcCanada = new Experience(
   0,
