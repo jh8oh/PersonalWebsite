@@ -7,7 +7,6 @@ const routeOptions = [
   { path: "/", name: "Home" },
   { path: "/about", name: "About" },
   { path: "/portfolio", name: "Portfolio" },
-  { path: "/blog", name: "Blog" },
   { path: "/contact", name: "ContactMe" },
   { path: "*", name: "NotFound" },
 ];

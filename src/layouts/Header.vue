@@ -34,7 +34,6 @@ export default class Header extends Vue {
   private pages = [
     { title: "About Me", url: "/about", floatRight: false },
     { title: "Portfolio", url: "/portfolio", floatRight: false },
-    { title: "Blog", url: "/blog", floatRight: false },
     { title: "Contact Me", url: "/contact", floatRight: true },
   ];
 
