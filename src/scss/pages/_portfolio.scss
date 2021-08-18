@@ -16,21 +16,26 @@
 
       > li {
         position: relative;
-        flex-basis: 32%;
-        margin-bottom: 8px;
+        flex-basis: 31%;
+        margin-bottom: 16px;
         border-radius: 2px;
         box-shadow: 2px 2px 4px 0 $color-on-background-variant;
         @include border-loop($color-primary);
+
+        &:hover{
+          transform: scale(1.05);
+          @include transition(transform 0.2s ease-in-out);
+        }
 
         $breakpoint-two-items: 1450px;
         $breakpoint-one-item: 800px;
 
         @include breakpoint($breakpoint-two-items) {
-          flex-basis: 48%;
+          flex-basis: 46%;
         }
 
         @include breakpoint($breakpoint-one-item) {
-          flex-basis: 96%;
+          flex-basis: 93%;
         }
       }
     }

@@ -209,12 +209,12 @@
   &:hover {
     &:before {
       @include border-loop-animation(border-loop-animation-before, $color);
-      @include animation(border-loop-animation-before 0.3s linear);
+      @include animation(border-loop-animation-before 0.3s ease-in);
     }
 
     &:after {
       @include border-loop-animation(border-loop-animation-after, $color, false);
-      @include animation(border-loop-animation-after 0.3s linear 0.25s);
+      @include animation(border-loop-animation-after 0.3s ease-out 0.25s);
     }
   }
 }
