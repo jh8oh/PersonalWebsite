@@ -22,16 +22,18 @@
         <h2>Experience</h2>
         <div id="experience-content">
           <ul id="timeline">
-            <h4>
-              <li
-                v-for="experience in experiences"
-                :key="experience.id"
-                @click="activeExperience = experience"
-                :class="{ active: activeExperience === experience }"
-              >
-                {{ experience.employer }}
-              </li>
-            </h4>
+            <div class="navigation-bar-scroll-wrapper">
+              <h4 class="navigation-bar-content">
+                <li
+                  v-for="experience in experiences"
+                  :key="experience.id"
+                  @click="activeExperience = experience"
+                  :class="{ active: activeExperience === experience }"
+                >
+                  {{ experience.employer }}
+                </li>
+              </h4>
+            </div>
           </ul>
           <transition name="flicker" mode="out-in">
             <ExperienceCard
@@ -50,7 +52,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import ExperienceCard from "@/components/about/ExperienceCard.vue";
 import Footer from "@/layouts/Footer.vue";
-import experiences from "@/ts/content/about/experience";
+import experiences from "@/ts/content/pages/about/experience";
 
 @Component({
   components: { ExperienceCard, Footer },

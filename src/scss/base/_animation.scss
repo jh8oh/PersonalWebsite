@@ -127,3 +127,72 @@
     }
   }
 }
+
+// Border loop animation
+@mixin border-loop-animation($name, $color, $before: true) {
+  @at-root {
+    @include keyframes($name) {
+      0% {
+        @if $before {
+          border-top-color: $color;
+          border-right-color: $color;
+        } @else {
+          border-bottom-color: $color;
+          border-left-color: $color;
+        }
+        width: 0;
+        height: 0;
+      }
+
+      25% {
+        @if $before {
+          left: 0;
+        } @else {
+          right: 0;
+        }
+        width: 99%;
+        height: 0;
+      }
+
+      50% {
+        @if $before {
+          left: 50%;
+        } @else {
+          right: 50%;
+        }
+        width: 49%;
+        height: 49%;
+      }
+
+      75% {
+        @if $before {
+          left: 99%;
+          top: 0;
+        } @else {
+          right: 99%;
+          bottom: 0;
+        }
+        width: 0;
+        height: 99%;
+      }
+
+      100% {
+        @if $before {
+          border-top-color: $color;
+          border-right-color: $color;
+        } @else {
+          border-bottom-color: $color;
+          border-left-color: $color;
+        }
+        @if $before {
+          left: 99%;
+          top: 99%;
+        } @else {
+          right: 99%;
+          bottom: 99%;
+        }
+        height: 0;
+      }
+    }
+  }
+}

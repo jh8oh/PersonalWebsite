@@ -4,15 +4,7 @@
 
 #about {
   &-content {
-    margin: 80px 24vw 40px;
-
-    @include breakpoint-tablet {
-      margin: 40px 14vw 20px;
-    }
-
-    @include breakpoint-phone {
-      margin: 40px 4vw 20px;
-    }
+    @extend %page-content-default-margin;
   }
 
   #intro {
@@ -61,6 +53,11 @@
 
     #timeline {
       @include navigation-bar(840px);
+      min-height: 350px;
+
+      @include breakpoint($breakpoint){
+        min-height: 0px;
+      }
     }
 
     #details {

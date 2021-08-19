@@ -64,8 +64,8 @@
   }
 
   border-color: $color;
-  box-shadow: 0 0 $size $color, 0 0 $size * 2 $color-dark, 0 0 $size / 2 $color, inset 0 0 $size $color,
-    inset 0 0 $size * 2 $color-dark, inset 0 0 $size / 2 $color;
+  box-shadow: 0 0 $size $color, 0 0 $size * 2 $color-dark, 0 0 $size / 2 $color,
+    inset 0 0 $size $color, inset 0 0 $size * 2 $color-dark, inset 0 0 $size / 2 $color;
 }
 
 // Standard navigation bar (vertical until breakpoint is reached)
@@ -78,8 +78,6 @@
   @include breakpoint($breakpoint) {
     position: relative;
     min-width: 0;
-    overflow: auto;
-    white-space: nowrap;
     border-left: 0;
     padding: 4px !important;
 
@@ -91,6 +89,27 @@
       width: 99%;
       z-index: -1;
       background: $color-on-background-variant;
+    }
+  }
+
+  .navigation-bar {
+    &-scroll-wrapper {
+      @extend %no-whitespace;
+
+      @include breakpoint($breakpoint) {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        margin-bottom: -2px;
+      }
+    }
+
+    &-content {
+      @extend %no-whitespace;
+
+      @include breakpoint($breakpoint) {
+        white-space: nowrap;
+      }
     }
   }
 
@@ -163,4 +182,39 @@
   margin: 0 auto;
   background-color: $color-primary;
   @include transition(width 0.3s ease);
+}
+
+// Border loop animation
+@mixin border-loop($color) {
+  &:before,
+  &:after {
+    box-sizing: inherit;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 2px solid transparent;
+  }
+
+  &:before {
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &:hover {
+    &:before {
+      @include border-loop-animation(border-loop-animation-before, $color);
+      @include animation(border-loop-animation-before 0.3s ease-in);
+    }
+
+    &:after {
+      @include border-loop-animation(border-loop-animation-after, $color, false);
+      @include animation(border-loop-animation-after 0.3s ease-out 0.225s);
+    }
+  }
 }
