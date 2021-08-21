@@ -4,7 +4,7 @@
       <h4>{{ project.title }}</h4>
       <ul class="archived-project-card-links">
         <li v-for="link in project.links" :key="link.title">
-          <a :href="link.to">
+          <a :href="link.to" target="_blank">
             <img
               @mouseover="link.hoverIcon.setIcon(true)"
               @mouseleave="link.hoverIcon.setIcon(false)"
