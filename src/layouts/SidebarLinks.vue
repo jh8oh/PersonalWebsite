@@ -2,7 +2,7 @@
   <div id="sidebar-links">
     <ul>
       <li v-for="link in links" :key="link.title">
-        <a :href="link.to">
+        <a :href="link.to" target="_blank">
           <img
             @mouseover="link.hoverIcon.setIcon(true)"
             @mouseleave="link.hoverIcon.setIcon(false)"
